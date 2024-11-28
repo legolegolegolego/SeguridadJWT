@@ -1,5 +1,6 @@
 package com.es.jwtsecurity.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,8 @@ public class RutaProtegidaController {
 
 
     @GetMapping("/")
-    public String rutaProtegida(Principal principal) {
-        return "Hola "+principal.getName()+" esto es una ruta protegida";
+    public String rutaProtegida(Authentication authentication) {
+
+        return "Hola "+authentication.getName()+" esto es una ruta protegida";
     }
 }
