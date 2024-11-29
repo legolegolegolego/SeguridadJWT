@@ -1,6 +1,6 @@
 
 # Enunciado del ejercicio: Creación de una API REST con gestión de usuarios, roles, autenticación y sesiones
-
+// los roles se controlan en el SecurityConfig
 ## Descripción del ejercicio
 
 El objetivo de este ejercicio es desarrollar una API REST en **Spring Boot** para gestionar usuarios, productos y sesiones. Implementarás autenticación manual, un sistema de roles con privilegios diferenciados, y el manejo de contraseñas hasheadas y sesiones con tokens cifrados.
@@ -21,7 +21,7 @@ Se trabajará con las siguientes tres entidades:
    - `id` (Long): Identificador único del producto.
    - `nombre` (String): Nombre del producto.
    - `stock` (int): Cantidad disponible del producto.
-   - `precio` (boolean): Indicador de si el producto tiene un precio válido o no.
+   - `precio` (double): Indicador de si el producto tiene un precio válido o no.
 
 ---
 
@@ -81,9 +81,8 @@ Se trabajará con las siguientes tres entidades:
    - `POST /productos`: Permite insertar un nuevo producto.
       - *SÓLO ADMIN*: Sólo los usuarios con ROL ADMIN pueden acceder a este recurso
       - **Entrada**: JSON con `nombre`, `stock`, y `precio`.
-   - `DELETE /productos`: Permite insertar un nuevo producto.
+   - `DELETE /productos/{id}`: Permite insertar un nuevo producto.
       - *SÓLO ADMIN*: Sólo los usuarios con ROL ADMIN pueden acceder a este recurso
-      - **Entrada**: JSON con `nombre`, `stock`, y `precio`.
 
 ---
 
