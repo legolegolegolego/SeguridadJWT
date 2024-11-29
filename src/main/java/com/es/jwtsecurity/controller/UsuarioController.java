@@ -74,7 +74,6 @@ public class UsuarioController {
             e.printStackTrace();
         }
 
-
         // Generamos el token
         String token = "";
         try {
@@ -84,12 +83,8 @@ public class UsuarioController {
             e.printStackTrace();
         }
 
-
-
-
         // Retornamos el token
         return token;
-
 
     }
 
