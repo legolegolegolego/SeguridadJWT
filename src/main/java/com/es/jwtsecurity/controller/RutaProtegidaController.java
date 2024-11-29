@@ -17,4 +17,10 @@ public class RutaProtegidaController {
 
         return "Hola "+authentication.getName()+" esto es una ruta protegida";
     }
+
+    @GetMapping("/public")
+    public String rutaProtegidaPublica() {
+
+        return "Hola esto es una ruta protegida pública";
+    }
 }

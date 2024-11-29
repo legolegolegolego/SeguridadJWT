@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -69,7 +70,7 @@ public class CustomUserDetailsService implements UserDetailsService {
      * @param usuarioRegisterDTO
      * @return
      */
-    public UsuarioRegisterDTO registerUser(UsuarioRegisterDTO usuarioRegisterDTO) {
+    public UsuarioRegisterDTO registerUser(@RequestBody UsuarioRegisterDTO usuarioRegisterDTO) {
         // Comprobamos que el usuario no existe en la base de datos
         if (usuarioRepository.findByUsername(usuarioRegisterDTO.getUsername()).isPresent()) {
             throw new IllegalArgumentException("El nombre de usuario ya existe");
